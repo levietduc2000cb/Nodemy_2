@@ -1,0 +1,103 @@
+:root {
+  --gray: #585858;
+  --green: #2faa06;
+  --green-light: #338b16;
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+@property --position {
+  syntax: "<angle>";
+  inherits: true;
+  initial-value: 0deg;
+}
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+}
+.rada {
+  width: 600px;
+  height: 600px;
+  background-image: conic-gradient(
+    from var(--position),
+    var(--green-light),
+    transparent 50%
+  );
+  border-radius: 100%;
+  border: 10px solid var(--gray);
+  position: relative;
+  z-index: 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: runRada linear 1.5s infinite;
+}
+@keyframes runRada {
+  from {
+    --position: 0deg;
+  }
+  to {
+    --position: -360deg;
+  }
+}
+.rada::before {
+  content: "";
+  position: absolute;
+  width: 6px;
+  background-color: var(--green);
+  height: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+}
+.rada::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  background-color: var(--green);
+  height: 6px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+}
+.circle {
+  width: calc(100% - 100px);
+  height: calc(100% - 100px);
+  border-radius: 100%;
+  border: 5px solid var(--green-light);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.list-dot {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
+  overflow: hidden;
+}
+.list-dot .dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 100%;
+  background-color: red;
+  position: absolute;
+  z-index: 4;
+  animation: dotAnimation 0.4s ease-in 1;
+}
+
+@keyframes dotAnimation {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

@@ -1,0 +1,304 @@
+@import url("https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+ul {
+  list-style: none;
+}
+header {
+  width: 100vw;
+  height: 100vh;
+  background-image: url(./assets/img_1.jpg);
+  background-position: top left;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  position: relative;
+}
+header .list-nav {
+  width: 100vw;
+}
+header .nav_wrapper {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+}
+.list-nav.list-nav-fixed {
+  position: fixed;
+  background-color: #000000aa;
+  z-index: 999;
+  animation: showNav 1s ease-out 1 forwards;
+}
+.list-nav .logo {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(to right, yellow, red);
+  color: white;
+  font-size: 4rem;
+  font-weight: bolder;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.list-nav .nav {
+  width: 130px;
+  height: 60px;
+  color: white;
+  font-size: 1.8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+header .name {
+  font-family: "Great Vibes", cursive;
+  font-size: 8rem;
+  text-align: center;
+  color: white;
+  letter-spacing: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  animation: showHeader 0.5s ease-out 1 forwards;
+}
+header::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  background: linear-gradient(to top, #dddddd, transparent);
+}
+.intro {
+  background-color: #dddddd;
+  width: 100vw;
+  text-align: center;
+  padding: 50px 0;
+}
+.intro .name {
+  font-family: "Great Vibes", cursive;
+  font-size: 8rem;
+  letter-spacing: 20px;
+  font-weight: bolder;
+  margin: 40px 0;
+  opacity: 0;
+}
+.intro .content {
+  opacity: 0;
+  line-height: 1.5;
+  font-size: 1.6rem;
+}
+.list-img {
+  text-align: center;
+  background-color: #cfdbdb;
+  height: 100vh;
+  padding: 50px 0;
+}
+.title {
+  font-size: 3rem;
+  font-weight: bolder;
+  margin-bottom: 50px;
+}
+.list {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 40px;
+}
+img {
+  width: 100%;
+  height: 90%;
+  object-fit: cover;
+}
+.img-item {
+  opacity: 0;
+}
+.img-item .name {
+  margin: 10px 0;
+  font-size: 1.6rem;
+}
+.img-item .des {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+.contact_wrapper {
+  background-color: #1e2538;
+  width: 100%;
+  height: 100vh;
+  padding: 50px 0;
+}
+.contact {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+.contact .title {
+  color: white;
+}
+.contact .list-item {
+  display: grid;
+  grid-template-columns: 45% 55%;
+}
+.contact .avatar {
+  padding-right: 100px;
+  text-align: right;
+  opacity: 0;
+}
+.contact .avatar img {
+  width: 60%;
+  height: 70vh;
+  object-fit: cover;
+}
+.contact .list-contact {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+.contact .list-contact div {
+  background-color: #161824;
+}
+.contact .item-contact {
+  padding: 40px;
+}
+.icon_wrapper {
+  text-align: left;
+  background-color: #9240e9 !important;
+  color: white;
+  padding: 2px 10px;
+  width: max-content;
+  border-radius: 999px;
+}
+.item-contact {
+  opacity: 0;
+}
+.item-contact .icon_wrapper {
+  opacity: 0;
+}
+.item-contact .icon_wrapper i {
+  color: white;
+  margin-right: 3px;
+}
+.item-contact .name {
+  font-size: 4rem;
+  padding: 10px 20px;
+  color: white;
+  opacity: 0;
+}
+.item-contact .address-link {
+  margin-top: 20px;
+  color: #ffffff51;
+  opacity: 0;
+}
+footer {
+  width: 100vw;
+  height: 30vh;
+  background-color: #161824;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 5rem;
+  font-family: "Great Vibes", cursive;
+  letter-spacing: 10px;
+  font-weight: bolder;
+}
+
+.active .showTop {
+  animation: showTop 1s ease-out 1 forwards;
+}
+.active .zoom {
+  animation: zoom 1s ease-out 1 forwards;
+}
+.active .showRight {
+  animation: showRight 1s ease-out 1 forwards;
+}
+@keyframes showNav {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+@keyframes showHeader {
+  from {
+    filter: blur(33px);
+    opacity: 0;
+    transform: translate(-50%, 50%);
+  }
+  to {
+    filter: blur(0);
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
+
+@keyframes showTop {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes zoom {
+  from {
+    opacity: 0;
+    transform: scale(0);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes showRight {
+  from {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.delay-02 {
+  animation-delay: 0.2s !important;
+}
+.delay-04 {
+  animation-delay: 0.4s !important;
+}
+.delay-06 {
+  animation-delay: 0.6s !important;
+}
+.delay-08 {
+  animation-delay: 0.8s !important;
+}
+.delay-10 {
+  animation-delay: 1s !important;
+}
+.delay-12 {
+  animation-delay: 1.2s !important;
+}
+.delay-14 {
+  animation-delay: 1.4s !important;
+}
+.delay-16 {
+  animation-delay: 1.6s !important;
+}

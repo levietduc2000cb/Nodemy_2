@@ -1,0 +1,201 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+body {
+  width: 100vw;
+  height: 100vh;
+  background-color: #2e3337;
+}
+ul {
+  list-style: none;
+}
+.container {
+  margin: 50px auto;
+  width: 80%;
+  height: 80%;
+  background-color: black;
+  overflow: hidden;
+  position: relative;
+}
+.nav-list {
+  display: flex;
+  position: absolute;
+  top: 0;
+  z-index: 999;
+}
+.nav-list > li {
+  padding: 10px;
+  font-size: 1.7rem;
+  margin: 0 20px;
+  color: white;
+  cursor: pointer;
+}
+.slice_wrapper {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.bird {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  transform: rotateY(-180deg) translateY(-50%) rotate(0deg);
+  top: 50%;
+  left: 10%;
+  z-index: 999;
+  transition: 0.5s linear;
+  animation: birdfly 3s linear infinite;
+  transition: 1.5s;
+}
+.bird.fly {
+  left: 40%;
+  top: 65%;
+  transform: rotateY(-180deg) translateY(-50%) rotate(-60deg);
+  animation: unset;
+}
+.bird.active-item {
+  animation: birdActiveFly 3s ease-in-out infinite;
+}
+.item {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+}
+.item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(50%);
+}
+.content {
+  position: absolute;
+  color: white;
+  bottom: 60px;
+  right: 42px;
+}
+.content .name {
+  font-size: 4rem;
+  transform: translateX(100%);
+  filter: blur(15px);
+  animation: textAnimation 0.5s ease-in 1s forwards;
+}
+.content .des {
+  margin-top: 40px;
+  margin-bottom: 32px;
+  font-size: 1.8rem;
+  transform: translateX(100%);
+  filter: blur(15px);
+  animation: textAnimation 0.5s ease-in 1.2s forwards;
+}
+.content .btn-more {
+  padding: 12px 18px;
+  outline: none;
+  border: 1px solid white;
+  color: white;
+  background-color: transparent;
+  font-size: 1.8rem;
+  transform: translateX(100%);
+  filter: blur(15px);
+  animation: textAnimation 0.5s ease-in 1.4s forwards;
+  transition: 0.3s;
+  cursor: pointer;
+}
+.content .btn-more:hover {
+  background-color: #ffffff68;
+}
+@keyframes birdfly {
+  0% {
+    transform: rotateY(-180deg) translateY(-50%);
+  }
+  50% {
+    transform: rotateY(-180deg) translateY(-45%) rotate(-5deg);
+  }
+  100% {
+    transform: rotateY(-180deg) translateY(-50%);
+  }
+}
+@keyframes birdActiveFly {
+  0% {
+    transform: rotateY(-180deg) translateY(-50%);
+  }
+  30% {
+    transform: rotateY(-180deg) translate(-150%, -15%) rotate(-40deg);
+  }
+  70% {
+    transform: rotateY(-180deg) translate(-100%, -35%) rotate(-40deg);
+  }
+  100% {
+    transform: rotateY(-180deg) translateY(-50%);
+  }
+}
+.list .item:nth-child(1) {
+  animation: hideItem 1s ease-in 1 forwards;
+}
+.list .item:nth-child(2) {
+  display: block;
+  animation: appearItem 1s ease-in 1 forwards;
+}
+.list .item:nth-child(n + 3) {
+  display: none;
+}
+@keyframes appearItem {
+  from {
+    transform: translateX(100%);
+    filter: blur(10px);
+  }
+  to {
+    transform: translateX(0);
+    filter: blur(0);
+  }
+}
+@keyframes hideItem {
+  0% {
+    transform: translateX(0);
+    filter: blur(0);
+    display: block;
+  }
+  99% {
+    transform: translateX(-100%);
+    filter: blur(10px);
+    display: block;
+  }
+  100% {
+    display: none;
+  }
+}
+
+@keyframes textAnimation {
+  from {
+    transform: translateX(100%);
+    filter: blur(15px);
+  }
+  to {
+    transform: translateX(0);
+    filter: blur(0);
+  }
+}
+
+.btn-next {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  background-color: #ffffff38;
+  border: none;
+  outline: none;
+  padding: 10px 20px;
+  font-weight: 600;
+  font-size: 1.6rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.btn-next:hover {
+  background-color: white;
+}

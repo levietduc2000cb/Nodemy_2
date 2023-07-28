@@ -1,0 +1,33 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: sans-serif;
+}
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container {
+  width: 125px;
+  height: 300px;
+  background-image: url(./assets//waling-cycl-animation-2.png);
+  background-repeat: no-repeat;
+  background-size: 1000px;
+  animation: effectAnimation 1s steps(8) infinite;
+}
+
+@keyframes effectAnimation {
+  from {
+    background-position: 0px;
+  }
+  to {
+    background-position: -1000px;
+  }
+}

@@ -1,0 +1,21 @@
+.wrapper {
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.wrapper .item {
+  width: 30%;
+  overflow: hidden;
+  border-radius: 10px;
+}
+.wrapper .item h1 {
+  text-align: center;
+}
+.wrapper .item img {
+  width: 100%;
+}
+#img_after {
+  filter: brightness(150%) contrast(150%);
+}

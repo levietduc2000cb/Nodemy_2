@@ -1,0 +1,155 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+  font-family: sans-serif;
+}
+.container_wrapper {
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: #e4e7ea;
+}
+.container {
+  width: 700px;
+  transition: 0.8s ease-in-out;
+}
+.header {
+  padding: 20px 10px;
+  display: flex;
+  justify-content: space-between;
+}
+.title {
+  font-size: 2.5rem;
+}
+.cart {
+  font-size: 2.5rem;
+  position: relative;
+  cursor: pointer;
+}
+.count {
+  position: absolute;
+  background-color: red;
+  color: white;
+  font-size: 1.5rem;
+  width: 18px;
+  height: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+  top: -4px;
+  right: -4px;
+}
+.items {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.item {
+  border-radius: 3px;
+  overflow: hidden;
+  border: 1px solid lightgray;
+  padding: 10px;
+  box-shadow: 0 0 30px 0 #00000061;
+}
+.item > img {
+  width: 100%;
+  object-fit: cover;
+}
+.item > h2 {
+  margin-top: 10px;
+  font-size: 1.7rem;
+  font-weight: bold;
+  text-align: center;
+}
+.item > p {
+  margin-top: 10px;
+  font-size: 1.5rem;
+  color: gray;
+  text-align: center;
+}
+.item > button {
+  margin-top: 10px;
+  width: 100%;
+  padding: 8px 0;
+  outline: none;
+  border: none;
+  background-color: black;
+  color: white;
+  cursor: pointer;
+}
+.carts {
+  width: 500px;
+  height: 100%;
+  background-color: yellow;
+  position: fixed;
+  left: 100%;
+  transition: 0.8s ease-in-out;
+  background-color: #423938;
+}
+.carts > .title {
+  text-align: center;
+  color: white;
+  padding: 10px 0;
+  position: relative;
+}
+.cart-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 10px 0;
+  color: white;
+}
+.cart-item > img {
+  width: 60px;
+  height: 60px;
+  border-radius: 100%;
+  background-color: white;
+  object-fit: cover;
+}
+.cart-item > h2 {
+  margin-left: 5px;
+}
+.cart-item > p {
+  font-size: 1.4rem;
+}
+.cart-item > div {
+  display: flex;
+  align-items: center;
+}
+.cart-item > div button {
+  cursor: pointer;
+  padding: 5px;
+  margin: 0 5px;
+}
+body.active .container {
+  transform: translateX(-36%);
+}
+body.active .carts {
+  left: calc(100% - 500px);
+}
+.carts-bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  width: 100%;
+}
+.carts-bottom div {
+  cursor: pointer;
+  flex: 1;
+  text-align: center;
+  padding: 20px 0;
+  font-size: 1.5rem;
+}
+.carts-bottom div:nth-child(1) {
+  background-color: #a17a03;
+}
+.carts-bottom div:nth-child(2) {
+  background-color: #131419;
+  color: white;
+}

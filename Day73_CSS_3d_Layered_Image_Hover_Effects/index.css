@@ -1,0 +1,52 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+body {
+  background-color: #000000d4;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.box {
+  width: 300px;
+  height: 400px;
+  position: relative;
+}
+.bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(./assets/background/forest.jpg);
+  background-position: center center;
+  background-size: cover;
+  transition: 0.5s;
+}
+.box:hover .bg {
+  transform: translateY(-50px) perspective(233px) rotateX(30deg);
+}
+
+.box .character {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70%;
+  height: 70%;
+  object-fit: cover;
+  background-image: url(./assets/img/anime_character_3.png);
+  background-position: center center;
+  background-size: cover;
+}
+.box:hover .character {
+  background-image: url(./assets/gif/anime_character_3.gif);
+}
