@@ -39,14 +39,6 @@ img {
   width: 100%;
   height: 100%;
 }
-@keyframes slideRun {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(calc(-357 * 10px));
-  }
-}
 .slide2 {
   animation: unset;
 }
